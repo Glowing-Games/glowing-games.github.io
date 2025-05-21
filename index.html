@@ -4,85 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glowing Games - Your Gaming Destination</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
+            background: #181b20;
+            color: #fff;
             margin: 0;
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #2c5364 100%);
-            color: #f0f0f0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background: rgba(44, 83, 100, 0.95);
-            padding: 24px 0 12px 0;
+            width: 100%;
+            background: #23272f;
+            padding: 2rem 0 1rem 0;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
         }
         header h1 {
-            font-size: 2.5rem;
+            color: #ff4257;
+            font-size: 2.7rem;
+            font-weight: bold;
             margin: 0;
             letter-spacing: 2px;
-            color: #00ffc3;
-            text-shadow: 2px 2px #111;
-            font-weight: bold;
         }
         nav {
             margin-top: 16px;
         }
         nav a {
             color: #fff;
-            margin: 0 20px;
+            margin: 0 22px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.05rem;
             letter-spacing: 1px;
-            font-size: 1rem;
             transition: color 0.2s;
         }
         nav a:hover {
-            color: #00ffc3;
+            color: #ff4257;
         }
         .hero {
+            background: #23272f;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
             text-align: center;
-            padding: 60px 20px 40px 20px;
-            background: rgba(15,32,39,0.7);
+            padding: 3rem 2rem 2.2rem 2rem;
+            margin: 2.5rem auto 2rem auto;
+            max-width: 520px;
+            width: 90%;
         }
         .hero h2 {
             font-size: 2rem;
             color: #fff;
-            margin-bottom: 18px;
             font-weight: bold;
+            margin-bottom: 1.1rem;
             letter-spacing: 1px;
         }
         .hero p {
-            font-size: 1.2rem;
-            color: #d1f7ff;
-            margin-bottom: 22px;
+            font-size: 1.15rem;
+            color: #b2c8df;
+            margin-bottom: 2rem;
         }
-        .hero .cta-btn {
-            background: #00ffc3;
-            color: #142850;
+        .cta-btn {
+            background: #ff4257;
+            color: #fff;
             border: none;
-            padding: 12px 32px;
+            padding: 14px 40px;
             font-size: 1.2rem;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
             font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             letter-spacing: 1px;
             transition: background 0.18s;
         }
-        .hero .cta-btn:hover {
-            background: #00bfae;
+        .cta-btn:hover {
+            background: #ff7688;
         }
         .featured-games {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 10px;
+            max-width: 1200px;
+            width: 98%;
+            margin: 0 auto 2.8rem auto;
         }
         .featured-games h3 {
-            color: #00ffc3;
+            color: #ff4257;
             font-size: 1.3rem;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
             letter-spacing: 1px;
@@ -94,15 +101,15 @@
             justify-content: center;
         }
         .game-card {
-            background: #22304d;
+            background: #23272f;
             border-radius: 12px;
-            box-shadow: 0 3px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 3px 16px rgba(0,0,0,0.14);
             width: 260px;
             overflow: hidden;
-            transition: transform 0.18s;
+            transition: transform 0.2s;
         }
         .game-card:hover {
-            transform: translateY(-8px) scale(1.03);
+            transform: translateY(-9px) scale(1.035);
         }
         .game-card img {
             width: 100%;
@@ -111,32 +118,48 @@
             display: block;
         }
         .game-card .info {
-            padding: 18px;
+            padding: 18px 18px 16px 18px;
         }
         .game-card .info h4 {
-            font-size: 1.1rem;
-            color: #fff;
+            font-size: 1.08rem;
+            color: #ff4257;
             margin: 0 0 8px 0;
             font-weight: bold;
         }
         .game-card .info p {
-            font-size: 0.95rem;
-            color: #e6e6e6;
+            font-size: 0.97rem;
+            color: #b2c8df;
             margin: 0;
         }
         footer {
-            margin-top: 50px;
-            padding: 24px 0 0 0;
+            width: 100%;
+            padding: 28px 0 0 0;
             background: none;
             text-align: center;
             color: #b2c8df;
             font-size: 0.97rem;
             letter-spacing: 2px;
+            margin-top: auto;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             .games-list {
                 flex-direction: column;
                 align-items: center;
+            }
+            .hero {
+                margin-top: 1.2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 1.5rem 0.7rem 1rem 0.7rem;
+            }
+            .game-card {
+                width: 92vw;
+                max-width: 320px;
             }
         }
     </style>
