@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 32px 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    #message {
+      margin-top: 24px;
+      color: #444;
+    }
+    #error {
+      color: red;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Completing Login...</h1>
+    <div id="message">Finishing authentication, please wait...</div>
+    <div id="error"></div>
+  </div>
+  <script>
+    // --- Demo: client-side exchange (NOT safe for production) ---
+    const CLIENT_ID = "Ov23liKFAEt1pU91TJ1F";
+    const CLIENT_SECRET = "d0d63a66c24b9840d616e88101506b5abaf60dee";
+    const REDIRECT_URI = "https://glowing-games.github.io/callback/";
 
+    async function exchangeCodeForToken(code) {
+      try {
+        const res = await fetch("https://github.com/login/oauth/access_token", {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            client_id: CLIENT_ID,
+            client_secret: CLIENT_SECRET,
+            code,
+            redirect_uri: REDIRECT_URI
+          })
+        });
+        const data = await res.json();
+        if (!data.access_token) {
+          document.getElementById('error').textContent = data.error_description || "Token exchange failed.";
+          document.getElementById('message').style.display = "none";
+          return;
+        }
+        // Optionally: store token, redirect, or display user info
+        window.location.href = "/login.html?token=" + encodeURIComponent(data.access_token);
+      } catch (err) {
+        document.getElementById('error').textContent = "Network error.";
+        document.getElementById('message').style.display = "none";
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      exchangeCodeForToken(code);
+    } else {
+      document.getElementById('error').textContent = "No code parameter found.";
+      document.getElementById('message').style.display = "none";
+    }
+  </script>
+</body>
+</html>
