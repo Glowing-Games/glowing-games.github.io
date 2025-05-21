@@ -4,77 +4,82 @@
     <meta charset="UTF-8">
     <title>404 Not Found | Glowing Games</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            min-height: 100vh;
+            background: #181b20;
+            color: #fff;
             display: flex;
             flex-direction: column;
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #2c5364 100%);
-            color: #f0f0f0;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .error-box {
+            background: #23272f;
+            padding: 2.5rem 3.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
             text-align: center;
+            max-width: 360px;
         }
         .error-title {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
+            color: #ff4257;
+            margin-bottom: 0.8rem;
             letter-spacing: 2px;
-            color: #00ffc3;
-            text-shadow: 2px 2px #111;
-            margin-bottom: 12px;
         }
         .error-message {
-            font-size: 1.5rem;
-            color: #b2c8df;
-            margin-bottom: 26px;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
         }
-        .home-btn {
-            background: #00ffc3;
-            color: #142850;
+        .home-link {
+            color: #ff4257;
+            text-decoration: underline;
             font-weight: bold;
-            border: none;
-            padding: 14px 38px;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-            transition: background 0.18s;
-            text-decoration: none;
-            letter-spacing: 1px;
+            font-size: 1.08rem;
+            transition: color 0.15s;
         }
-        .home-btn:hover {
-            background: #00bfae;
+        .home-link:hover {
+            color: #ff7688;
         }
-        footer {
-            margin-top: 48px;
-            padding: 24px 0 0 0;
-            background: none;
-            text-align: center;
-            color: #b2c8df;
-            font-size: 0.97rem;
-            letter-spacing: 2px;
+        .spinner {
+            margin: 28px auto 0;
+            width: 48px;
+            height: 48px;
+            border: 5px solid #ff4257;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @media (max-width: 500px) {
+            .error-box {
+                padding: 1.2rem 0.7rem;
+                max-width: 95vw;
+            }
+            .error-title {
+                font-size: 2.2rem;
+            }
+            .error-message {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <main>
+    <div class="error-box">
         <div class="error-title">404</div>
         <div class="error-message">
-            Oops! The page you are looking for does not exist.<br>
-            Let's get you back on track.
+            The page you're looking for can't be found.<br>
+            <a class="home-link" href="/">Return to homepage</a>
         </div>
-        <a class="home-btn" href="/">Go to Homepage</a>
-    </main>
-    <footer>
-        &copy; 2025 Glowing Games. All Rights Reserved.
-    </footer>
+        <div class="spinner"></div>
+    </div>
 </body>
 </html>
