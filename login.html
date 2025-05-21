@@ -64,7 +64,7 @@
     // UNSAFE: Exposing client secret in browser for demo only!
     const CLIENT_ID = "Ov23liKFAEt1pU91TJ1F";
     const CLIENT_SECRET = "d0d63a66c24b9840d616e88101506b5abaf60dee";
-    const REDIRECT_URI = "https://glowing-games.github.io/login/";
+    const REDIRECT_URI = "https://glowing-games.github.io/callback/";
 
     document.getElementById('login-btn').onclick = function() {
       const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=read:user`;
