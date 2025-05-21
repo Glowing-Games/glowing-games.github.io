@@ -65,8 +65,8 @@
         // Optionally: store token, redirect, or display user info
         window.location.href = "/login.html?token=" + encodeURIComponent(data.access_token);
       } catch (err) {
-        document.getElementById('error').textContent = "Network error.";
-        document.getElementById('message').style.display = "none";
+        // On network error, redirect to homepage
+        window.location.href = "/";
       }
     }
 
