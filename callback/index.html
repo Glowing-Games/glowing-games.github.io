@@ -41,6 +41,22 @@
     const CLIENT_SECRET = "d0d63a66c24b9840d616e88101506b5abaf60dee";
     const REDIRECT_URI = "https://glowing-games.github.io/callback/";
 
+    function handleOAuthError(params) {
+      const error = params.get('error');
+      const errorDescription = params.get('error_description');
+      if (error) {
+        document.getElementById('message').style.display = "none";
+        document.getElementById('error').textContent =
+          decodeURIComponent(errorDescription || error);
+        // Redirect to homepage after 2 seconds
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000);
+        return true;
+      }
+      return false;
+    }
+
     async function exchangeCodeForToken(code) {
       try {
         const res = await fetch("https://github.com/login/oauth/access_token", {
@@ -65,18 +81,21 @@
         // Optionally: store token, redirect, or display user info
         window.location.href = "/login.html?token=" + encodeURIComponent(data.access_token);
       } catch (err) {
-        // On network error, redirect to homepage
         window.location.href = "/";
       }
     }
 
     const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-    if (code) {
-      exchangeCodeForToken(code);
-    } else {
-      document.getElementById('error').textContent = "No code parameter found.";
-      document.getElementById('message').style.display = "none";
+
+    // First handle error, if present
+    if (!handleOAuthError(params)) {
+      const code = params.get('code');
+      if (code) {
+        exchangeCodeForToken(code);
+      } else {
+        document.getElementById('error').textContent = "No code parameter found.";
+        document.getElementById('message').style.display = "none";
+      }
     }
   </script>
 </body>
