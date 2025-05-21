@@ -4,96 +4,75 @@
     <meta charset="UTF-8">
     <title>404 Not Found | Glowing Games</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            background: linear-gradient(135deg, #232526, #1e3c72 100%);
-            color: #fafafa;
-            font-family: 'Roboto', Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #2c5364 100%);
+            color: #f0f0f0;
         }
-        .container {
+        main {
             flex: 1;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             text-align: center;
         }
-        h1 {
-            font-family: 'Press Start 2P', cursive;
+        .error-title {
             font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
             color: #00ffc3;
-            margin: 0 0 16px 0;
-            text-shadow: 3px 3px #222;
+            text-shadow: 2px 2px #111;
+            margin-bottom: 12px;
         }
-        h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 2rem;
-            color: #fff;
-            margin: 0 0 18px 0;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #d1f7ff;
-            margin-bottom: 24px;
+        .error-message {
+            font-size: 1.5rem;
+            color: #b2c8df;
+            margin-bottom: 26px;
         }
         .home-btn {
             background: #00ffc3;
             color: #142850;
-            font-family: 'Press Start 2P', cursive;
+            font-weight: bold;
             border: none;
-            padding: 12px 32px;
-            font-size: 1.1rem;
+            padding: 14px 38px;
+            font-size: 1.2rem;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: background 0.18s;
             text-decoration: none;
-            display: inline-block;
+            letter-spacing: 1px;
         }
         .home-btn:hover {
             background: #00bfae;
         }
-        .ghost {
-            margin: 36px 0 12px 0;
-            width: 120px;
-            height: 120px;
-            display: inline-block;
-            background: none;
-        }
         footer {
-            padding: 18px 0;
-            background: #1b2838;
-            color: #b2c8df;
+            margin-top: 48px;
+            padding: 24px 0 0 0;
+            background: none;
             text-align: center;
-            font-size: 0.98rem;
-            letter-spacing: 1px;
+            color: #b2c8df;
+            font-size: 0.97rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <svg class="ghost" viewBox="0 0 120 120">
-            <ellipse cx="60" cy="60" rx="50" ry="50" fill="#fff" opacity="0.18"/>
-            <path d="M20,90 Q30,80 40,90 Q50,100 60,90 Q70,80 80,90 Q90,100 100,90 Q100,50 60,30 Q20,50 20,90 Z" fill="#fff"/>
-            <circle cx="48" cy="65" r="8" fill="#222"/>
-            <circle cx="72" cy="65" r="8" fill="#222"/>
-            <ellipse cx="48" cy="67" rx="3" ry="1.5" fill="#fff"/>
-            <ellipse cx="72" cy="67" rx="3" ry="1.5" fill="#fff"/>
-            <ellipse cx="60" cy="85" rx="8" ry="4" fill="#222"/>
-        </svg>
-        <h2>Page Not Found</h2>
-        <p>
-            Uh oh! The page you're looking for has vanished into the pixel void.<br>
-            Let's get you back in the game!
-        </p>
-        <a class="home-btn" href="/">Return Home</a>
-    </div>
+    <main>
+        <div class="error-title">404</div>
+        <div class="error-message">
+            Oops! The page you are looking for does not exist.<br>
+            Let's get you back on track.
+        </div>
+        <a class="home-btn" href="/">Go to Homepage</a>
+    </main>
     <footer>
         &copy; 2025 Glowing Games. All Rights Reserved.
     </footer>
