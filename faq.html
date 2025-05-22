@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ – Glowing Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        background: #181b20;
+        color: #fff;
+        margin: 0;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        width: 100%;
+        background: #23272f;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    header h1 {
+        color: #ff4257;
+        font-size: 2.7rem;
+        font-weight: bold;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+    .faq-card {
+        background: #23272f;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        max-width: 540px;
+        width: 92%;
+        margin: 2.5rem auto 2rem auto;
+        padding: 2.3rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+    }
+    .faq-card h2 {
+        color: #ff4257;
+        font-size: 1.38rem;
+        margin: 0 0 0.7rem 0;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+    .faq-section {
+        background: #181b20;
+        border-radius: 9px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        margin-bottom: 0.6rem;
+        padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+        position: relative;
+    }
+    .collapsible-btn {
+        width: 100%;
+        background: none;
+        color: #ff4257;
+        border: none;
+        font-size: 1.09rem;
+        font-weight: bold;
+        text-align: left;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        margin-bottom: 0.35rem;
+        transition: color 0.18s;
+    }
+    .collapsible-btn:hover, .collapsible-btn:focus {
+        color: #fff;
+    }
+    .collapsible-btn .arrow {
+        display: inline-block;
+        margin-right: 0.65em;
+        font-size: 1.1em;
+        transition: transform 0.18s;
+    }
+    .collapsible-btn.active .arrow {
+        transform: rotate(90deg);
+    }
+    .collapsible-content {
+        display: none;
+        margin-top: 0.2rem;
+        color: #b2c8df;
+        font-size: 1.01rem;
+        line-height: 1.7;
+        letter-spacing: 0.1px;
+    }
+    .collapsible-content.active {
+        display: block;
+        animation: fadeIn 0.25s;
+    }
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        .faq-card {
+            padding: 1.1rem 0.65rem 1rem 0.65rem;
+        }
+        .faq-card h2 {
+            font-size: 1.09rem;
+        }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Glowing Games FAQ</h1>
+  </header>
+  <main class="faq-card">
+    <h2>Frequently Asked Questions</h2>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> What is Glowing Games?</button>
+      <div class="collapsible-content">
+        Glowing Games is an online platform and community offering a curated selection of fun, accessible games. We strive to provide a safe, engaging, and constantly evolving gaming experience for everyone.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> How can I play games on Glowing Games?</button>
+      <div class="collapsible-content">
+        Simply browse our site, pick a game you like, and start playing directly in your browser—no downloads or sign-ups required!
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> Is Glowing Games free to use?</button>
+      <div class="collapsible-content">
+        Yes! All games on Glowing Games are free to play. Some games may include optional in-game purchases or ads, but access is always free.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> Do I need to create an account?</button>
+      <div class="collapsible-content">
+        No account is needed to start playing. For enhanced features like saving progress or posting in the community, you may choose to sign up.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> Can I submit my own game?</button>
+      <div class="collapsible-content">
+        Yes! We encourage indie developers to submit their games. Please visit our <a href="submit.html" style="color:#ff4257;">Game Submission</a> page for requirements and the submission process.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> How do I report a bug or issue?</button>
+      <div class="collapsible-content">
+        Please visit our <a href="reporting-guidelines.html" style="color:#ff4257;">Reporting Guidelines</a> page for instructions on reporting problems or providing feedback.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> Is my data safe on Glowing Games?</button>
+      <div class="collapsible-content">
+        We take privacy and security seriously. Your data is protected and never shared with third parties without your consent. For more details, see our Privacy Policy.
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> Who do I contact for support?</button>
+      <div class="collapsible-content">
+        For general support, please use our <a href="mailto:support@glowinggames.com" style="color:#ff4257;">support email</a> or visit the <a href="contact.html" style="color:#ff4257;">Contact Us</a> page.
+      </div>
+    </section>
+
+  </main>
+  <script>
+    // Collapsible FAQ logic
+    document.querySelectorAll('.collapsible-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        let content = this.nextElementSibling;
+        if (this.classList.contains('active')) {
+          content.classList.add('active');
+        } else {
+          content.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
