@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporting Guidelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        background: #181b20;
+        color: #fff;
+        margin: 0;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        width: 100%;
+        background: #23272f;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    header h1 {
+        color: #ff4257;
+        font-size: 2.7rem;
+        font-weight: bold;
+        margin: 0;
+        letter-spacing: 2px;
+    }
+    .guidelines-card {
+        background: #23272f;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        max-width: 540px;
+        width: 92%;
+        margin: 2.5rem auto 2rem auto;
+        padding: 2.3rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+    }
+    .guidelines-card h2 {
+        color: #ff4257;
+        font-size: 1.38rem;
+        margin: 0 0 0.7rem 0;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+    .guidelines-card section {
+        background: #181b20;
+        border-radius: 9px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        margin-bottom: 0.6rem;
+        padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+        position: relative;
+    }
+    .collapsible-btn {
+        width: 100%;
+        background: none;
+        color: #ff4257;
+        border: none;
+        font-size: 1.09rem;
+        font-weight: bold;
+        text-align: left;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        margin-bottom: 0.35rem;
+        transition: color 0.18s;
+    }
+    .collapsible-btn:hover, .collapsible-btn:focus {
+        color: #fff;
+    }
+    .collapsible-btn .arrow {
+        display: inline-block;
+        margin-right: 0.65em;
+        font-size: 1.1em;
+        transition: transform 0.18s;
+    }
+    .collapsible-btn.active .arrow {
+        transform: rotate(90deg);
+    }
+    .collapsible-content {
+        display: none;
+        margin-top: 0.2rem;
+        color: #b2c8df;
+        font-size: 1.01rem;
+        line-height: 1.7;
+        letter-spacing: 0.1px;
+    }
+    .collapsible-content.active {
+        display: block;
+        animation: fadeIn 0.25s;
+    }
+    pre {
+        background: #16181c;
+        color: #e6e8ef;
+        padding: 1rem;
+        border-radius: 7px;
+        font-size: 0.99rem;
+        overflow-x: auto;
+        margin: 0.4rem 0;
+        border: 1px solid #252934;
+    }
+    .copy-btn {
+        background: #ff4257;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 0.43rem 1.15rem;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        transition: background 0.18s;
+    }
+    .copy-btn:hover, .copy-btn:focus {
+        background: #ff7688;
+    }
+    .copy-feedback {
+        margin-left: 0.8rem;
+        color: #79ffb9;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: opacity 0.12s;
+        opacity: 0;
+        position: relative;
+        top: 2px;
+    }
+    .copy-feedback.visible {
+        opacity: 1;
+    }
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        .guidelines-card {
+            padding: 1.1rem 0.65rem 1rem 0.65rem;
+        }
+        .guidelines-card h2 {
+            font-size: 1.09rem;
+        }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reporting Guidelines</h1>
+  </header>
+  <main class="guidelines-card">
+    <h2>How to Submit a Clear & Effective Report</h2>
+
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 1. Purpose & Audience</button>
+      <div class="collapsible-content">
+        These guidelines are for anyone submitting reports—such as bug reports, incident reports, or general feedback—to help our team resolve issues or suggestions efficiently.
+      </div>
+    </section>
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 2. What to Include</button>
+      <div class="collapsible-content">
+        <ol>
+          <li><strong>Title:</strong> A concise summary of the issue or topic.</li>
+          <li><strong>Description:</strong> Details, including:
+            <ul>
+              <li>What happened?</li>
+              <li>What did you expect?</li>
+              <li>When did it occur?</li>
+              <li>Who is affected?</li>
+            </ul>
+          </li>
+          <li><strong>Steps to Reproduce (if applicable):</strong> List actions to trigger the issue.</li>
+          <li><strong>Supporting Evidence:</strong> Attach logs, screenshots, or code snippets if available.</li>
+          <li><strong>Environment:</strong> (e.g., browser, device, version, OS)</li>
+          <li><strong>Impact:</strong> How severe is the issue?</li>
+        </ol>
+      </div>
+    </section>
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 3. Formatting Tips</button>
+      <div class="collapsible-content">
+        <ul>
+          <li>Be clear, specific, and objective.</li>
+          <li>Avoid jargon if possible.</li>
+          <li>Use bullet points or numbered lists for steps.</li>
+          <li>Use proper grammar and punctuation.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 4. Example / Template</button>
+      <div class="collapsible-content">
+        <pre id="report-template">
+Title: [Brief summary]
+
+Description:
+- What happened:
+- What you expected:
+- When/Where:
+- Who is affected:
+
+Steps to Reproduce:
+1.
+2.
+3.
+
+Supporting Evidence:
+- [Attach files or paste logs/screenshots]
+
+Environment:
+- Browser/Device/OS/Version info
+
+Impact:
+- [Describe severity]
+
+Additional Notes:
+- [Optional]
+        </pre>
+        <button class="copy-btn" id="copy-template" aria-label="Copy template to clipboard">Copy Template</button>
+        <span class="copy-feedback" id="copy-feedback">Copied!</span>
+      </div>
+    </section>
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 5. Submission Process</button>
+      <div class="collapsible-content">
+        <ol>
+          <li>Prepare your report using the template above.</li>
+          <li>Submit via the designated channel (e.g., issue tracker, feedback form, or email).</li>
+          <li>Provide contact details if follow-up is needed.</li>
+          <li>Respond to any follow-up questions.</li>
+        </ol>
+      </div>
+    </section>
+    <section>
+      <button class="collapsible-btn" type="button"><span class="arrow">&#9654;</span> 6. FAQs & Resources</button>
+      <div class="collapsible-content">
+        <strong>Q: What if I don’t have all the details?</strong>
+        <br>A: Submit what you have—partial information is better than none.<br><br>
+        <strong>Q: Where can I get help?</strong>
+        <br>A: Contact our support team or check our documentation for more info.
+      </div>
+    </section>
+  </main>
+  <script>
+    // Collapsible sections
+    document.querySelectorAll('.collapsible-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        let arrow = this.querySelector('.arrow');
+        let content = this.nextElementSibling;
+        if (this.classList.contains('active')) {
+          content.classList.add('active');
+        } else {
+          content.classList.remove('active');
+        }
+      });
+    });
+    // Copy to clipboard
+    document.getElementById('copy-template').addEventListener('click', function() {
+      const template = document.getElementById('report-template').innerText;
+      navigator.clipboard.writeText(template).then(() => {
+        const feedback = document.getElementById('copy-feedback');
+        feedback.classList.add('visible');
+        setTimeout(() => feedback.classList.remove('visible'), 1200);
+      });
+    });
+  </script>
+</body>
+</html>
